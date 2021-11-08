@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout2.html" %}
+
+{% block title %}
+    Create a new page
+{% endblock %}
+
+{% block body %}
+    <h1>Create a new page</h1>
+    <form>
+        <h4>Title:</h4>
+        <input type="text" name="title" value= {{title}} >
+        <h4>Text:</h4>
+        <textarea name="text">{{text}}</textarea>
+        <h4> </h4>
+        <button action={% url 'new_page' %} type="submit">Save</button>
+
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}
+                    <script>alert("{{ message }}")</script>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+    </form>
+
+
+
+{% endblock %}

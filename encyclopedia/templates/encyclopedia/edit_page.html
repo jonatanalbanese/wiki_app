@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout2.html" %}
+
+{% block title %}
+    Edit page
+{% endblock %}
+
+{% block body %}
+    <h1>Edit page: {{name}}</h1>
+
+    <form>
+        <textarea name="text">{{text}}</textarea>
+        <h4> </h4>
+        <button action="../edit/{{name}}" type="submit">Save</button>
+
+    </form>
+
+{% endblock %}
